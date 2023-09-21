@@ -1,0 +1,10 @@
+PROJ_SUBPATH=deploy
+STAGES_PREFIX=stages/
+STAGES_SUBPATH_EXPRESSION="${STAGES_PREFIX}?-*"
+WORKING_SUBPATH=target/working
+
+# the (N) means not to complain if those are absent
+KEEP_FILES_EXPRESSION=".?* {,terraform.tfstate*,*.tf}(N) scripts src"
+EXCLUDE_FILES_EXPRESSION=".?* {,terraform.tfstate*,local.*,*.tf}(N) scripts src"
+EXCLUDE_FILES_OPTION="-x .?* -x terraform.tfstate* -x local.* -x scripts -x src -x *.tf"
+

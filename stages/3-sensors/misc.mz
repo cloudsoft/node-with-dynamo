@@ -1,0 +1,36 @@
+
+## Grouping of miscellaneous components
+
+
+# Misc Group
+
+resource "maeztro" "misc" {
+  position_in_parent = [ 320, 320 ]
+  name = "misc"
+}
+
+
+# Terraform Resources
+
+maeztro extend resource "random_string.salt_generated" {
+  parent = maeztro.misc
+  name = "Random Prefix"
+}
+
+maeztro extend resource "tls_private_key.ssh_key" {
+  parent = maeztro.misc
+  name = "SSH Key"
+}
+
+
+# Shared data
+
+locals {
+  aws_cli_env = {
+    AWS_ACCESS_KEY_ID : var.aws_access_key_id
+    AWS_SECRET_ACCESS_KEY : var.aws_secret_access_key
+    AWS_SESSION_TOKEN : var.aws_session_token
+    AWS_REGION: var.region
+    AWS_DEFAULT_REGION: var.region
+  }
+}
