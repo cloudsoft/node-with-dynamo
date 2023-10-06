@@ -1,7 +1,7 @@
 
 # Cloudsoft AMP - Maeztro for Terraform Tutorial
 
-Welcome. This tutorial will walk you through the key concepts behind Cloudsoft AMP, using the Maeztro subsystem so we can very quickly get a working application blueprint and learn how AMP provides a structured approach to management. You will first see a sample application, using both cloud VMs and services, deployed with Terraform. The application has a few bugs that impact operations, so we will use Maeztro to collect inormation on the problems and then resolve them operationally.
+Welcome. This tutorial will walk you through the key concepts behind Cloudsoft AMP, using the Maeztro subsystem so we can very quickly get a working application blueprint and learn how AMP provides a structured approach to management. You will first see a sample application, using both cloud VMs and services, deployed with Terraform. The application has a few bugs that impact operations, so we will use Maeztro to collect information on the problems and then resolve them operationally.
 
 The tutorial will take about an hour, and the techniques you will learn will apply to any Terraform deployments where you want to simplify and blueprint operations.  
 
