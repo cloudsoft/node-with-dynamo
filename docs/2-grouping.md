@@ -104,7 +104,7 @@ To upload these changes back to the server and preview them, simply run `mz sync
 
 You can run `mz apply` to activate the changes, or do this via the UI as we did previously. In this example, as we are not running Terraform at the server, so a UI apply will not re-run Terraform but the CLI will. If Terraform Cloud or another backend is used, Terraform can be run safely in either location. We aren't changing the Terraform here, so it doesn't matter.
 
-The application in this tutorial has two main components: the web server and the DynamoDB table. In addition, there are the data table items two miscellaneous resource, the `random` used to give a unique prefix and the SSH key. We suggest grouping the resources as follows:
+The application in this tutorial has two main components: the web server and the DynamoDB table. In addition, there are the data table items, and two miscellaneous resources: the `random` used to give a unique prefix and the SSH key. We suggest grouping the resources as follows:
 
 - `nodejs-server.mz` - web components in a group (the EC2, the security group and the elastic IP resources)
 - `dynamo-table.mz` - a data tier group (the DynamoDB table and its access policy) and the data items group (already populated)
