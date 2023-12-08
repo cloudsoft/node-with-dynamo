@@ -90,7 +90,7 @@ This shows the use of AMP workflow `steps` to make a request against the URL we 
 
 We used the simple built-in `duration` field so that this tutorial doesn't need you to set up external monitoring, but often in the real world this type of metric will come from a third-party monitoring tool. The exact same principles apply, a workflow step pulls the data from the monitoring source or sources, with an `http` call or using `shell` or `ssh` script or container. You will see examples of this below. 
 
-**Note:** Because it is used so frequently in operations and compliance, Maeztro understands `duration` as a first-class type, along with `timestamp`. This is used here for the `period`, and as we'll see very shortly, these types can also be used for mathematics where things are time-sensitive.
+> **_NOTE:_** Because it is used so frequently in operations and compliance, Maeztro understands `duration` as a first-class type, along with `timestamp`. This is used here for the `period`, and as we'll see very shortly, these types can also be used for mathematics where things are time-sensitive.
 
 ![sensors-latency](imgs/3-2-latency.png)
 
@@ -139,7 +139,7 @@ maeztro extend resource "aws_dynamodb_table.data_table" {
 }
 ```
 
-**Note:** If you are using an AMP deployment with `kubectl` configured, you can replace the `step: shell aws dynamodb ...` entry with two entries, `step: container amazon/aws-cli` and `args: dynamodb ...`. The same `env` should be supplied. This can be used to run any permitted container.
+> **_NOTE:_** If you are using an AMP deployment with `kubectl` configured, you can replace the `step: shell aws dynamodb ...` entry with two entries, `step: container amazon/aws-cli` and `args: dynamodb ...`. The same `env` should be supplied. This can be used to run any permitted container.
 
 
 ## Data Table Read Capacity Units Sensor

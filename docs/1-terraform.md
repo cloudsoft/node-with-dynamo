@@ -48,20 +48,25 @@ If you see the `*.tf` files, you're ready to go.
 
 ## Configuring the Terraform Deployment Variables
 
-The `variables.tf` file defines the variables used to deploy and configure the application.  Two of these variables, `aws_access_key_id` and `aws_secret_access_key`, need to be set in order for Terraform to communicate with AWS to set up the infrastructure, for the NodeJS application to access DynamoDB, and for the Maeztro management you will write to read metrics from AWS and access DynamoDB.
+The `variables.tf` file defines the variables used to deploy and configure the application.  Three of these variables, `aws_access_key_id`, `aws_secret_access_key` and `aws_session_token`, need to be set in order for Terraform to communicate with AWS to set up the infrastructure, for the NodeJS application to access DynamoDB, and for the Maeztro management you will write to read metrics from AWS and access DynamoDB.
 
-These two variables must be set correctly for your environment. We recommend setting them in a `local.auto.tfvars` with the following format:
+These three variables must be set correctly for your environment. We recommend setting them in a `local.auto.tfvars` with the following format:
 
 ```properties
 aws_access_key_id = "AKIAXyour_access_key"
 aws_secret_access_key = "s3cr3ts3cr3ts3cr3ts3cr3ts3cr3ts3cr3tp455"
+aws_session_token = "IamGrantingYouAccessToAwsforAShortWhile"
 ```
 
-**Note:** This approach is the simplest for getting started. In production you will likely want to store credentials in an external secret store, or use environment variables, instance profiles, IAM roles or STS tokens: these are all supported.
+> **_NOTE:_**  This approach is the simplest for getting started. In production you will likely want to store credentials in an external secret store, or use environment variables, instance profiles, IAM roles or STS tokens: these are all supported.
 
-The `prefix_identifier` value is used to name and tag all resources. By default it is set as `cloudsoft-maeztro-tutorial` so that all the resources created in AWS will be clearly labelled. If desired, you can set this in your `local.auto.tfvars` to a string which also identifies you.
+> **_IMPORTANT:_** This demo declares and uses the following environment variables: `AWS_ACCESS_KEY_ID`,`AWS_SECRET_ACCESS_KEY`,`AWS_SESSION_TOKEN`,`AWS_REGION`. Make sure they are not already defined on your system to avoid collisions which might lead to this demo not working as expected. 
 
-The other variables can be left as is, or you can provide preferred values following the comments in the TF files. (Note that if you change the `region` from `eu-north-1`, you will have to change the `ami_id`; the scripts are designed against Ubuntu 20.)
+The `prefix_identifier` value is used to name and tag all resources. By default, it is set as `cloudsoft-maeztro-tutorial` so that all the resources created in AWS will be clearly labelled. If desired, you can set this in your `local.auto.tfvars` to a string which also identifies you.
+
+The other variables can be left as is, or you can provide preferred values following the comments in the TF files. 
+
+> **_IMPORTANT:_** Note that if you change the `region` from `eu-north-1`, you will have to change the `ami_id`; the scripts are designed against Ubuntu 20.
 
 
 ## Apply the Terraform

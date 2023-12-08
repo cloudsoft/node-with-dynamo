@@ -11,9 +11,9 @@ Then, set the `MZ_AMP_SERVER_URL` environment variable pointing to your Maeztro 
 export MZ_AMP_SERVER_URL=http://admin:password@127.0.0.1:8081/
 ```
 
-**Note:** This is a temporary step. Support for the CLI to cache credentials securely is in development.
+> **_NOTE:_** This is a temporary step. Support for the CLI to cache credentials securely is in development.
 
-**Note:** We will create and edit Maeztro files during this tutorial and use the CLI to send them to the server. You can edit the files at each step, or if you prefer, commands to copy across the changed files are included at the bottom of each page.
+> **_NOTE:_** We will create and edit Maeztro files during this tutorial and use the CLI to send them to the server. You can edit the files at each step, or if you prefer, commands to copy across the changed files are included at the bottom of each page.
 
 Next, in a shell in the directory where this project resides, where you checked out and ran `terraform`, now run:
 
@@ -100,7 +100,7 @@ Your file may have some additional positioning information, and don't worry if i
 
 To upload these changes back to the server and preview them, simply run `mz sync`. If you make changes at the server, the same command will pull them down.
 
-**Note:** If changes are made in both sites, the `mz` command will warn you and ask you which ones you want to keep. Maeztro does not attempt conflict resolution, as this is easy enough with `git` or another source control tool. For example: `git stash` followed by a `mz run --tracks files:pull --force` then `git stash pop`.
+> **_NOTE:_** If changes are made in both sites, the `mz` command will warn you and ask you which ones you want to keep. Maeztro does not attempt conflict resolution, as this is easy enough with `git` or another source control tool. For example: `git stash` followed by a `mz run --tracks files:pull --force` then `git stash pop`.
 
 You can run `mz apply` to activate the changes, or do this via the UI as we did previously. In this example, as we are not running Terraform at the server, so a UI apply will not re-run Terraform but the CLI will. If Terraform Cloud or another backend is used, Terraform can be run safely in either location. We aren't changing the Terraform here, so it doesn't matter.
 
