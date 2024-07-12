@@ -27,7 +27,7 @@ APP_LOCATION=~/app
 test -d "${APP_LOCATION}" && APP_EXISTS="already"
 
 if [ "${APP_EXISTS}" ]; then
-  echo "[create]: App already installed." | tee -a /tmp/terraform-provisioner.log
+  echo "[create]: App already installed at ${APP_LOCATION}." | tee -a /tmp/terraform-provisioner.log
 else
   cd ~/
   mkdir -p app

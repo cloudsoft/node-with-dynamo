@@ -10,7 +10,7 @@ test -f ".env" && APP_CONFIGURED="already"
 if [ "$APP_CONFIGURED" ]; then
   echo "[configure] Application already configured." >> /tmp/terraform-provisioner.log
 else
-  if [$# -eq 5]; then
+  if [ "$#" -eq 5 ]; then
     TOKEN=""
     TABLE=${5}
   else
